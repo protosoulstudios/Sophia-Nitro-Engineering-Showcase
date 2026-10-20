@@ -13,7 +13,7 @@
 
 These claims describe inspected implementation. No Unity runtime, device, rendering, performance, or store verification is asserted. Private review records retain the source revision and evidence mapping; they are deliberately outside this showcase.
 
-This independently authored documentation draft contains no production assets, source samples, configuration, or private audit records. Asset redistribution and project publication rights are separate questions. Publication and any reuse terms require owner review. Future updates should follow verified engineering milestones rather than mirror the private project automatically.
+This independently authored showcase contains no production assets, production source excerpts, game configuration, or private audit records. Asset redistribution and project publication rights are separate questions. Publication and any reuse terms require owner review. Future updates should follow verified engineering milestones rather than mirror the private project automatically.
 
 ## Scene transition example
 
