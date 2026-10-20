@@ -1,10 +1,14 @@
 # Checkpoint and respawn
 
+[Portfolio](../../README.md) · [Verification matrix](../verification-matrix.md) · [Demonstration plan](../demonstration-plan.md)
+
+## Engineering challenge
+
 A fall should cost the player progress from the last safe point, not leave the character carrying the motion that caused the failure. The engineering challenge is to give checkpoint ownership a clear lifetime and recover the correct player without making every hazard understand movement internals.
 
 This case study examines the game's scene-local checkpoint authority and typed respawn boundary. The [independent C# authority](../../samples/checkpoint-respawn/CheckpointAuthority.cs), [player recovery model](../../samples/checkpoint-respawn/PlayerRecoveryState.cs) and [executable checks](../../samples/checkpoint-respawn/Program.cs) let a client inspect responsibility separation and recovery edge cases. They are newly authored illustrations, not extracted production scripts or a Unity-ready replacement. Rights and public publication remain pending review.
 
-## Production responsibilities inspected
+## Production implementation inspected
 
 On October 20, 2026, remote production main still matched the previously reviewed baseline. Private evidence records retain the exact source commit and hashes. No newer production main revision was observed.
 
@@ -37,7 +41,7 @@ The fall zone uses a 0.5-second unscaled cooldown per zone. Hazards use a per-ro
 
 These interactions use Unity callbacks and direct component/service calls; the inspected checkpoint and manager do not register a checkpoint event bus or own subscription cleanup. The spawner's early execution order helps initial binding, while Awake/Start, destruction and delayed hazard callbacks remain Unity lifecycle dependencies. Manager destruction clears its singleton. Scene reload creates a new manager/checkpoint state; no checkpoint position is written to a save store. The spawner method named RespawnSelectedPlayer recreates the initial player and bindings; it is distinct from checkpoint recovery of the existing controller.
 
-## Independent demonstration design
+## C# demonstration and design decisions
 
 The example is deliberately synchronous and gameplay-focused. It does not repeat the asynchronous scene-transition example.
 
@@ -51,7 +55,7 @@ All access is serialized by the caller; this is not thread-safe. The caller must
 
 Production has no corresponding token model, central reentrant guard or structured recovery result. Conversely, the example does not reproduce production cooldowns, feedback, reward tuning, prefab selection, camera binding or CharacterController movement. Production excerpt rights were not cleared; no production code or assets were copied.
 
-## Verification evidence
+## Executable verification
 
 The twelve independent contract checks passed after compilation using SDK 8.0.426's Roslyn compiler with .NET 8 references, nullable analysis and warnings as errors. Checks cover initial fallback, activation snapshot isolation, replacement, invalid activation, repeated motion/input recovery, stale work after reset, invalid reset preservation, unavailable targets, nested requests, partial failure/retry, availability exceptions and cross-authority rejection.
 
@@ -59,7 +63,7 @@ The ordinary SDK run command was attempted but failed during NuGet-Migrations mu
 
 The inspected production test file contains general logic checks, not checkpoint/respawn tests. A project C# filename scan found no additional test files, and no assembly definitions were found. Test discovery and execution in Unity were not verified. No Editor, Play Mode, Android, scene-reload or physics test was run here.
 
-## Unity verification and demonstration plan
+## Unity and Android verification required
 
 | Scenario | Evidence to collect in Unity, then on Android where relevant |
 | --- | --- |
@@ -73,6 +77,8 @@ The inspected production test file contains general logic checks, not checkpoint
 
 Use controlled synthetic scenes for failure cases and record exact source revision, Unity version, setup, expected and actual outcomes. These are planned checks, not passed tests.
 
+## Proposed demonstration footage
+
 After client and asset-rights clearance, a short clip should show initial spawn → checkpoint activation → fall → checkpoint recovery → second fall/recovery → scene restart returning to initial state. Compare Sophia and Nitro if collider/rig behavior differs. Review character and purchased-environment depiction rights, audio and confidential editor/log content before recording. No footage was generated or published.
 
-The next decision is owner review of the code, provenance and explanation, followed by controlled Unity verification. Save and Persistence remains a future assignment.
+The next decision is owner review of the code, provenance and explanation, followed by controlled Unity verification. The [persistence example](save-and-persistence.md) separately examines saved data and reset scope.

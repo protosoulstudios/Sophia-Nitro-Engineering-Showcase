@@ -1,12 +1,16 @@
 # Scene transition management
 
+[Portfolio](../../README.md) · [Verification matrix](../verification-matrix.md) · [Demonstration plan](../demonstration-plan.md)
+
+## Engineering challenge
+
 Navigation input can arrive repeatedly while a scene is still loading, and the screen that requested a transition may be destroyed before it finishes. A single transition owner keeps that work alive and prevents competing requests from starting another load. Explicit failure results and retained exception details give the caller a useful debugging boundary instead of an unexplained stuck screen.
 
 This example lets a client inspect how the developer separates coordination from engine calls, defines state and failure contracts, and verifies edge cases. Its checks demonstrate those skills in an independent C# model; they do not establish production Unity reliability or device performance.
 
 Start with the [C# coordinator](../../samples/scene-transitions/TransitionCoordinator.cs), then inspect the [executable contract checks](../../samples/scene-transitions/Program.cs). This is an independently authored, runnable .NET demonstration inspired by inspected responsibilities in the game. It is not extracted production code, a Unity adapter, or evidence that the game passed these tests. Code and narrative remain private review candidates pending owner approval and reuse-rights review; no public license is granted.
 
-## What the game implements
+## Production implementation inspected
 
 The reviewed production branch still points to the previously reviewed Unity baseline when checked on October 20, 2026. The bootstrap composes a scene-loading service and supplies its persistent coroutine host. The startup controller waits for initialization, then loads Main Menu directly. Menu and level selection set a pending course; character selection requests a transition through Loading. Pause can reload the active scene directly or return to Main Menu through Loading.
 
@@ -27,7 +31,7 @@ Both asynchronous coroutines run on the bootstrap host. The loading screen is sc
 - The production coroutines do not wrap engine calls in an exception recovery boundary and have no timeout. Availability validation is not proof that an operation completes. A missing persistent host or bootstrap teardown is not resolved by the busy guard.
 - Progress reaching its activation threshold is not a frame-time measurement or proof that scene-local dependencies are ready. Startup and normal navigation must still be exercised in Unity.
 
-## Why an independent example
+## C# demonstration and design decisions
 
 A production excerpt would offer direct implementation fidelity, but authorship, contractual permission and redistribution terms for the source have not been independently cleared. It also relies on Unity coroutines, scene configuration and application logging. Copying it would transfer those dependencies without producing a self-contained verification target.
 
@@ -47,7 +51,7 @@ The backend must return a non-null task. Successful completion means activation 
 
 The `finally` block releases managed bookkeeping only. It cannot stop an engine load. A timeout wrapper that returns while engine work continues would violate the backend contract and allow competing work. The example deliberately has no timeout or manual reset. If the backend never settles, it stays busy. If activation partially succeeds before failure, there is no rollback; recovery and scene-lifetime decisions belong to a future Unity integration. Catching backend exceptions is a bounded reporting mechanism, not a promise to recover from every process failure.
 
-## Verification evidence
+## Executable verification
 
 The refinement was compiled on October 20, 2026 using .NET SDK 8.0.426's Roslyn compiler against .NET 8 reference assemblies, with nullable analysis and warnings as errors. **All 12 executable contract checks passed.** The original eight scenarios remain, with stronger cleanup/retry assertions; four focused scenarios were added:
 
@@ -60,7 +64,7 @@ The ordinary documented `dotnet run` command was attempted again and failed duri
 
 The existing production EditMode file checks empty/whitespace scene names using the static name helper. It does not demonstrate availability, coroutine lifecycle, overlap, or interruption coverage. Those production tests were inspected, not executed. No Play Mode, Unity build, Android device or gameplay-media verification was performed here.
 
-## Unity verification still required
+## Unity and Android verification required
 
 | Scenario | Required observation in a controlled Editor test |
 | --- | --- |
@@ -74,8 +78,8 @@ The existing production EditMode file checks empty/whitespace scene names using 
 
 Use synthetic scenes before interrupting real game transitions. Record source revision, Unity version, setup, expected and actual observations, and logs. Do not label these planned checks passed.
 
-## Proposed demonstration clip
+## Proposed demonstration footage
 
 After permission clearance, capture a short menu → character selection → Loading → course sequence, followed by one restart. Pair it with a development-only state trace and a clearly labeled synthetic overlap test. Avoid credentials, editor paths and private logs. Clear rights to depict characters, purchased environments, audio and client work first. No clip has been produced.
 
-The next portfolio step is owner review of this independent code and its relationship to production, followed by Unity integration verification. Checkpoint/respawn and persistence remain separate future examples.
+The next portfolio step is owner review of this independent code and its relationship to production, followed by Unity integration verification. The [checkpoint](checkpoint-and-respawn.md) and [persistence](save-and-persistence.md) examples cover complementary gameplay and data responsibilities.

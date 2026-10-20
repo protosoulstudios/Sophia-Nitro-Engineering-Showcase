@@ -1,10 +1,14 @@
 # Save and persistence
 
+[Portfolio](../../README.md) · [Verification matrix](../verification-matrix.md) · [Demonstration plan](../demonstration-plan.md)
+
+## Engineering challenge
+
 Players expect settings and earned progress to survive a restart, while Reset Adventure should not erase their character choice or preferences. The engineering problem is to give each data set an explicit owner, validate stored input, and make recovery behavior understandable when storage is missing, malformed or fails mid-write.
 
 The [independent settings store](../../samples/save-persistence/SettingsStore.cs), [scoped progression example](../../samples/save-persistence/AdventurePreferences.cs) and [executable checks](../../samples/save-persistence/Program.cs) demonstrate data contracts, recovery decisions and partial-write testing. They are newly authored illustrations, not copied production code or a Unity persistence replacement. Code provenance, reuse terms and public publication remain subject to owner review.
 
-## Inspected production architecture
+## Production implementation inspected
 
 On October 20, 2026, remote production main still matched the previously reviewed Unity source baseline. Private records retain the exact commit and inspected-file hashes. Source inspection establishes these responsibilities; it does not establish Android storage durability.
 
@@ -34,7 +38,7 @@ Reset Adventure removes progression, pending level and reward keys while preserv
 
 Production JSON has field defaults and settings clamping, but no explicit version negotiation or migration path. Adding fields requires Unity deserialization and old-save verification rather than assuming missing fields behave as desired. The existing test whose name mentions missing FPS data actually loads an absent settings file; it does not supply legacy JSON lacking an FPS field.
 
-## Independent demonstration
+## C# demonstration and design decisions
 
 The sample deliberately uses a small version-one settings record: volume, frame-rate target and haptics. A separate two-key progression model illustrates scoped level/reward writes. It is not the production key layout, full settings schema or a production migration.
 
@@ -54,7 +58,7 @@ These guarantees are bounded by the storage contract and serialized access. A su
 
 Version-one optional fields use declared sample defaults. Unknown properties are ignored and would not round-trip through the known model; incompatible additions must change the version and require an explicit migration design. No migration is implemented. The sample progression dictionary is synthetic and has no PlayerPrefs flush or transactional guarantee: completing a level performs two independent writes. The sample does not claim cross-store consistency.
 
-## Executed verification
+## Executable verification
 
 Seventeen persistence checks passed using SDK 8.0.426's Roslyn compiler with .NET 8 references, nullable analysis and warnings as errors. They cover missing defaults, round trip, optional-field defaults, malformed/wrong-type JSON, normalization, backup recovery, both-invalid fallback, version refusals, read errors, write order, partial failures at all three stages, first-save failure, scoped reset and invalid progression values.
 
@@ -64,7 +68,7 @@ The ordinary documented dotnet command was attempted but failed at SDK NuGet-Mig
 
 Existing production EditMode tests cover default settings, frame-rate normalization, quality bounds, basic JSON round trip, absent-file defaults and filename conventions, alongside unrelated helpers. They were inspected, not executed. They do not establish production corruption recovery, backup preservation, interrupted-write behavior or progression reset coverage.
 
-## Remaining Unity and Android verification
+## Unity and Android verification required
 
 | Check | Required evidence |
 | --- | --- |
@@ -78,8 +82,8 @@ Existing production EditMode tests cover default settings, frame-rate normalizat
 
 Never corrupt real customer saves or a production save directory for this demonstration. Use a dedicated test profile with backups and synthetic fixtures. No Unity import, Editor/Play Mode, Android build/device, app-update or real filesystem failure verification was performed here.
 
-## Proposed demonstration
+## Proposed demonstration footage
 
 After rights clearance, show a setting change surviving relaunch, then a controlled level completion and relaunch preserving the earned progression. Demonstrate invalid-save fallback separately with clearly labeled synthetic data and observable results. Review client permission, character/environment/audio depiction rights and logs/paths before capture. No footage was generated or published.
 
-The next step is owner review and controlled Unity/platform verification. This task does not integrate or merge the final portfolio or authorize public release.
+The next step is owner review and controlled Unity/platform verification. This integrated candidate remains on a private review branch; no merge or public release is authorized.

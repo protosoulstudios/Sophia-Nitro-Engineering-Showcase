@@ -15,14 +15,14 @@ These claims describe inspected implementation. No Unity runtime, device, render
 
 This independently authored showcase contains no production assets, production source excerpts, game configuration, or private audit records. Asset redistribution and project publication rights are separate questions. Publication and any reuse terms require owner review. Future updates should follow verified engineering milestones rather than mirror the private project automatically.
 
-## Scene transition example
+## Integrated verification
 
-The [independent demonstration](showcases/scene-transition-management.md) now has twelve executed .NET contract checks, including cleanup/retry and reentrant validation scenarios. These results apply only to the newly authored example, not production Unity behavior. Public code rights and Unity integration remain pending review.
+| Independent example | Executed checks | Principal scope |
+| --- | --- | --- |
+| [Scene transitions](showcases/scene-transition-management.md) | 12 passed | Request/state ownership, validation, failures and reentrant calls |
+| [Checkpoint and respawn](showcases/checkpoint-and-respawn.md) | 12 passed | Pose snapshots, fallback, supported state recovery, reset and stale sessions |
+| [Save and persistence](showcases/save-and-persistence.md) | 17 passed | Version/default/validation policy, backup fallback, partial writes and reset scope |
 
-## Checkpoint and respawn example
+All 41 checks were rerun for the integration candidate with direct Roslyn compilation and .NET runtime execution. Sample C# behavior is unchanged. Nullable analysis and warnings as errors were enabled. Ordinary SDK commands remain blocked by NuGet-Migrations initialization; an ordinary project build is not claimed.
 
-The [checkpoint case study](showcases/checkpoint-and-respawn.md) adds twelve executed checks for its independent model: fallback, snapshots/replacement, invalid input, recovery state, stale sessions, unavailable targets, reentrancy and failure recovery. These do not validate production colliders, physics, lifecycle timing, cooldowns or device behavior. Code provenance and public reuse remain pending owner review.
-
-## Save and persistence example
-
-The [persistence case study](showcases/save-and-persistence.md) adds seventeen executed checks for its independent model: validation/defaults, version decisions, backup recovery, injected partial writes, scoped reset and invalid progression values. Twelve checks for each earlier sample were also executed unchanged. These results do not establish Unity JSON behavior, PlayerPrefs durability, physical filesystem guarantees or Android lifecycle outcomes.
+The [verification matrix](verification-matrix.md) separates these results from production source inspection, planned Editor/Play Mode work and Android tests. The [demonstration plan](demonstration-plan.md) identifies proposed footage, prerequisites and limits. Neither runtime batches nor media capture have been completed. The samples' safeguards must not be attributed to production without source/runtime evidence.

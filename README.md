@@ -1,25 +1,35 @@
 # Sophia & Nitro: Sweetland Adventures
 
-An engineering case study for Protosoul Studios: a Unity Android obstacle-course game with character selection, three courses, checkpoints, progression rewards, and mobile application services.
+**Unity gameplay and application engineering — Protosoul Studios**
 
-The engineering focus is ownership across scene changes: persistent services coordinate transitions and settings, while scene-local systems manage players and checkpoint recovery. Progression and settings deliberately use separate persistence paths.
+Sophia & Nitro is a Unity Android obstacle-course adventure with two playable characters, three courses, checkpoints and unlockable movement rewards. This portfolio examines the engineering behind scene navigation, player recovery and persistent data.
 
-| Engineering area | Implemented approach |
-| --- | --- |
-| Scene transitions | Persistent coroutine host, validated requests and explicit transition states |
-| Checkpoint recovery | Scene-local checkpoint authority and a typed player respawn API |
-| Progression | Bounded level unlocks and separate reward flags |
-| Persistence | PlayerPrefs progression plus JSON settings with backup fallback |
-| Mobile policy | Supported frame-rate targets and focused logic tests |
+The inspected Protosoul Studios engineering scope includes persistent application services, scene-local gameplay components, character spawning/binding, progression and settings. Three independently authored C# demonstrations make the design principles inspectable without transferring the proprietary Unity project.
 
-## Inspectable engineering examples
+## Explore the engineering
 
-[Scene transition management](docs/showcases/scene-transition-management.md) pairs the source-grounded case study with an independently authored C# coordinator and twelve executed contract checks. It remains a private review candidate; Unity runtime behavior and code redistribution rights are separate review gates.
+| Showcase | What to evaluate | Inspect the evidence |
+| --- | --- | --- |
+| **[Scene Transition Management](docs/showcases/scene-transition-management.md)** | One transition owner, competing-request guards, asynchronous state and observable failures | [C# coordinator](samples/scene-transitions/TransitionCoordinator.cs) · [12 executable checks](samples/scene-transitions/Program.cs) · [Run instructions](samples/scene-transitions/README.md) |
+| **[Checkpoint and Respawn](docs/showcases/checkpoint-and-respawn.md)** | Checkpoint authority, component boundaries, player-state recovery and stale scene sessions | [C# authority](samples/checkpoint-respawn/CheckpointAuthority.cs) · [Recovery model](samples/checkpoint-respawn/PlayerRecoveryState.cs) · [12 executable checks](samples/checkpoint-respawn/Program.cs) · [Run instructions](samples/checkpoint-respawn/README.md) |
+| **[Save and Persistence](docs/showcases/save-and-persistence.md)** | Data ownership, validation, version decisions, backup recovery and narrowly scoped reset | [C# settings store](samples/save-persistence/SettingsStore.cs) · [Progression model](samples/save-persistence/AdventurePreferences.cs) · [17 executable checks](samples/save-persistence/Program.cs) · [Run instructions](samples/save-persistence/README.md) |
 
-[Checkpoint and respawn](docs/showcases/checkpoint-and-respawn.md) focuses on gameplay recovery: scene-local checkpoint ownership, stale-session rejection and supported player-state reset, with an independent C# sample and twelve executed checks. Production Unity physics and lifecycle verification remain pending.
+Each case study connects the inspected game implementation to an independent example, explains the tradeoffs, and identifies the remaining runtime checks. The samples illustrate engineering decisions; they are not extracted production scripts or drop-in Unity replacements.
 
-[Save and persistence](docs/showcases/save-and-persistence.md) examines separate progression/settings ownership, validation, backup recovery and scoped reset. Its independent sample exercises partial storage failures and explicit version decisions through seventeen checks, without claiming production durability or filesystem guarantees.
+## Technical context
 
-Read the [architecture](docs/architecture.md), [gameplay and persistence](docs/gameplay-and-persistence.md), [mobile and validation](docs/mobile-and-validation.md), [engineering decisions](docs/decisions.md), and [coverage limits](docs/coverage.md). See the [draft history](CHANGELOG.md).
+The reviewed game pins **Unity 6000.2.14f1**, **URP 17.2.0** and **Input System 1.16.0**, targeting **Android**. The standalone examples target **.NET 8** and use synthetic backends or state rather than game assets. No game build or production source is distributed here.
 
-The reviewed project pins Unity 6000.2.14f1. This showcase contains engineering documentation and an independent C# demonstration. It includes no production game source, assets, game build, or license grant. The independent C# examples are clearly identified as demonstrations. Source inspection supports the implementation descriptions; production runtime and Android verification are not claimed. This reconstructed draft is prepared for owner review, not authorized for publication.
+## Verification and next evidence
+
+All **41 independent checks** passed in the integration review: 12 transition, 12 checkpoint and 17 persistence checks. Compilation used .NET SDK 8.0.426's Roslyn compiler with nullable analysis and warnings as errors, followed by direct .NET runtime execution. The ordinary SDK run commands remain blocked in this environment by a NuGet-Migrations initialization error; ordinary project builds are not claimed.
+
+These results verify the independent models. Production descriptions are grounded in source inspection; Unity Editor, Play Mode, Android device behavior and gameplay footage remain unverified. The examples do not establish measured performance, crash-safe storage or production failure recovery.
+
+See the **[verification matrix](docs/verification-matrix.md)** for executed evidence and efficient runtime test batches, and the **[demonstration plan](docs/demonstration-plan.md)** for proposed footage and its limits. No footage has been recorded for this portfolio.
+
+## Further reading
+
+[Architecture](docs/architecture.md) · [Gameplay and persistence](docs/gameplay-and-persistence.md) · [Engineering decisions](docs/decisions.md) · [Mobile policy](docs/mobile-and-validation.md) · [Evidence and coverage](docs/coverage.md) · [Draft history](CHANGELOG.md)
+
+This is a private portfolio candidate for owner review. Public release and code reuse terms remain pending approval. No public license is granted, and no production assets, private review records or real save data are included.

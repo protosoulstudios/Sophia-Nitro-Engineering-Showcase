@@ -1,5 +1,9 @@
 # Draft history
 
+## Portfolio integration review candidate
+
+Integrated the three examples through a direct README evidence index, consistent case-study navigation and section names, a focused Unity/Android verification matrix and a practical media plan. Removed stale future-example references. All 41 independent checks passed again; no C# behavior or production files changed. Public release remains gated by separate approval and rights review.
+
 ## Save and persistence private candidate
 
 Added a source-grounded persistence case study and independently authored versioned settings store, scoped progression model and seventeen passing checks. Both earlier examples remain unchanged and their twelve checks each passed. Documented partial-write and backup-policy limits; no real saves or production scripts were transferred. No final integration or public release is authorized.
