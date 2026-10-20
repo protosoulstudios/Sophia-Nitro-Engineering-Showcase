@@ -5,7 +5,9 @@ namespace Showcase.SceneTransitions;
 public enum TransitionState { Idle, LoadingIntermediary, LoadingDestination }
 public enum RequestResult { Completed, InvalidDestination, Busy, Failed }
 
-// Implementations define scene availability and complete only after scene activation.
+// Availability must not start loading. LoadSingleAsync must return a non-null Task.
+// Success means activation is complete; fault/cancellation must also mean the backend
+// has stopped mutating scene state. Early completion breaks coordinator exclusivity.
 // This sample deliberately has no Unity dependency or claimed Unity adapter.
 public interface ISceneBackend
 {
@@ -20,6 +22,8 @@ public sealed class TransitionCoordinator
 
     public TransitionState State { get; private set; }
     public string? Destination { get; private set; }
+    // Diagnostic for the last admitted backend request; cleared on the next admission.
+    // Busy and malformed-name rejections preserve it. Not a per-request history.
     public Exception? LastFailure { get; private set; }
 
     public TransitionCoordinator(ISceneBackend backend, string intermediary)
@@ -30,7 +34,12 @@ public sealed class TransitionCoordinator
         this.intermediary = intermediary;
     }
 
-    // Call on one owning thread/context, as Unity UI normally would. Not thread-safe.
+    // Calls, property reads and continuations must be serialized by one owner.
+    // In Unity this requires a live owning SynchronizationContext across awaits.
+    // Plain console execution may resume on a pool thread: callers must still avoid
+    // concurrent access. This class neither captures an owner nor marshals callers.
+    // Default await preserves a present context; do not add ConfigureAwait(false)
+    // without redesigning that ownership contract. Not thread-safe.
     // No cancellation/reset API: a request stays busy until the backend settles.
     // A backend that never completes will keep it busy; no timeout is claimed.
     public async Task<RequestResult> RequestAsync(string? destination, bool viaIntermediary = true)
@@ -61,11 +70,14 @@ public sealed class TransitionCoordinator
         {
             // Backend errors become an observable result. A partially changed
             // scene is not rolled back; callers must choose a recovery screen.
+            // A canceled Task is a Failed outcome here, not an engine cancel command.
             LastFailure = failure;
             return RequestResult.Failed;
         }
         finally
         {
+            // Release only managed ownership. This cannot stop an engine operation;
+            // safe reuse depends on the backend settlement contract above.
             Destination = null;
             State = TransitionState.Idle;
         }

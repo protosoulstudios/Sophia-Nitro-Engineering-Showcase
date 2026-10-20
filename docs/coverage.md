@@ -17,4 +17,4 @@ This independently authored showcase contains no production assets, production s
 
 ## Scene transition example
 
-The [independent demonstration](showcases/scene-transition-management.md) adds eight executed .NET contract checks. These results apply only to the newly authored example, not production Unity behavior. Public code rights and Unity integration remain pending review.
+The [independent demonstration](showcases/scene-transition-management.md) now has twelve executed .NET contract checks, including cleanup/retry and reentrant validation scenarios. These results apply only to the newly authored example, not production Unity behavior. Public code rights and Unity integration remain pending review.

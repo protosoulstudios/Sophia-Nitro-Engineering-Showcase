@@ -14,7 +14,7 @@ The engineering focus is ownership across scene changes: persistent services coo
 
 ## Inspectable engineering example
 
-[Scene transition management](docs/showcases/scene-transition-management.md) pairs the source-grounded case study with an independently authored C# coordinator and eight executed contract checks. It remains a private review candidate; Unity runtime behavior and code redistribution rights are separate review gates.
+[Scene transition management](docs/showcases/scene-transition-management.md) pairs the source-grounded case study with an independently authored C# coordinator and twelve executed contract checks. It remains a private review candidate; Unity runtime behavior and code redistribution rights are separate review gates.
 
 Read the [architecture](docs/architecture.md), [gameplay and persistence](docs/gameplay-and-persistence.md), [mobile and validation](docs/mobile-and-validation.md), [engineering decisions](docs/decisions.md), and [coverage limits](docs/coverage.md). See the [draft history](CHANGELOG.md).
 

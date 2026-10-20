@@ -1,5 +1,9 @@
 # Draft history
 
+## Scene transition technical refinement
+
+Clarified client value, serialized-context and backend settlement contracts, diagnostic lifetime and interruption limits. Strengthened existing checks and added four focused scenarios; twelve checks passed through direct Roslyn/runtime invocation. The normal dotnet run command still fails during sandbox SDK initialization. No production behavior or prior evidence was changed.
+
 ## Scene transition review candidate
 
 Added a source-grounded case study, independently authored C# coordinator and eight executable contract checks. The example compiled and all eight checks passed through direct Roslyn/runtime invocation; Unity and Android testing remain unperformed. No production scripts were copied.

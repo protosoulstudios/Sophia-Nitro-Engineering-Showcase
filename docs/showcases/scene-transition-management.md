@@ -1,6 +1,8 @@
 # Scene transition management
 
-A transition can outlive the menu or level that requested it. The engineering objective is to keep one clear owner for that work, reject conflicting requests, and expose enough state for the loading UI without making the UI responsible for execution.
+Navigation input can arrive repeatedly while a scene is still loading, and the screen that requested a transition may be destroyed before it finishes. A single transition owner keeps that work alive and prevents competing requests from starting another load. Explicit failure results and retained exception details give the caller a useful debugging boundary instead of an unexplained stuck screen.
+
+This example lets a client inspect how the developer separates coordination from engine calls, defines state and failure contracts, and verifies edge cases. Its checks demonstrate those skills in an independent C# model; they do not establish production Unity reliability or device performance.
 
 Start with the [C# coordinator](../../samples/scene-transitions/TransitionCoordinator.cs), then inspect the [executable contract checks](../../samples/scene-transitions/Program.cs). This is an independently authored, runnable .NET demonstration inspired by inspected responsibilities in the game. It is not extracted production code, a Unity adapter, or evidence that the game passed these tests. Code and narrative remain private review candidates pending owner approval and reuse-rights review; no public license is granted.
 
@@ -29,7 +31,7 @@ Both asynchronous coroutines run on the bootstrap host. The loading screen is sc
 
 A production excerpt would offer direct implementation fidelity, but authorship, contractual permission and redistribution terms for the source have not been independently cleared. It also relies on Unity coroutines, scene configuration and application logging. Copying it would transfer those dependencies without producing a self-contained verification target.
 
-The new demonstration isolates coordination behind `ISceneBackend`. It reserves ownership before backend validation or loading, returns explicit request outcomes, and releases ownership in `finally`. Backend exceptions are observable through `LastFailure`. This is a proposed example design, not a claim that production already has those improvements.
+The new demonstration isolates coordination behind `ISceneBackend`. It reserves ownership before backend validation or loading, returns explicit request outcomes, and releases ownership in `finally`. Backend exceptions are observable through `LastFailure`. That diagnostic belongs to the last admitted backend request, not every caller: busy or malformed-name rejections preserve it; the next admitted request clears it. Callers should inspect the result and diagnostic before admitting another request. This is a proposed example design, not a claim that production already has those improvements.
 
 | Demonstration choice | Boundary |
 | --- | --- |
@@ -39,13 +41,22 @@ The new demonstration isolates coordination behind `ISceneBackend`. It reserves 
 | No reset/cancel API | Busy remains until backend completion; hung operations remain busy |
 | Explicit failure result | No rollback after a scene partially changes; caller chooses recovery |
 
-Catching backend exceptions is intentionally a small application boundary, not a promise to recover from every process failure. The backend must settle only when its operation is complete; a backend that reports failure while engine work continues would invalidate the ownership guarantee. Consumers should inspect failures rather than silently retrying indefinitely.
+Calls, property reads and continuations must be serialized by one owning context. In Unity, normal `await` captures a present synchronization context, but the example neither installs that context nor verifies thread affinity. A console app can resume on a pool thread: serial access is still required, and concurrent callers remain unsupported. A destroyed owner or lost Unity context is not handled here. Adding `ConfigureAwait(false)` would require redesigning the ownership contract, not merely a style change.
+
+The backend must return a non-null task. Successful completion means activation has finished; a faulted or canceled task must mean no underlying operation is still changing scene state. A backend must not report cancellation merely because its caller stopped waiting. A canceled task becomes a Failed result in this demonstration; the coordinator issues no cancellation command.
+
+The `finally` block releases managed bookkeeping only. It cannot stop an engine load. A timeout wrapper that returns while engine work continues would violate the backend contract and allow competing work. The example deliberately has no timeout or manual reset. If the backend never settles, it stays busy. If activation partially succeeds before failure, there is no rollback; recovery and scene-lifetime decisions belong to a future Unity integration. Catching backend exceptions is a bounded reporting mechanism, not a promise to recover from every process failure.
 
 ## Verification evidence
 
-On October 20, 2026, the independent example compiled using .NET SDK 8.0.426's Roslyn compiler against .NET 8 reference assemblies, with nullable analysis and warnings as errors. Its executable checks reported **8 passed**: intermediary order and completion reset; direct route; invalid targets; missing intermediary; overlaps in both pending phases; intermediary failure and retry; destination failure; validation exception.
+The refinement was compiled on October 20, 2026 using .NET SDK 8.0.426's Roslyn compiler against .NET 8 reference assemblies, with nullable analysis and warnings as errors. **All 12 executable contract checks passed.** The original eight scenarios remain, with stronger cleanup/retry assertions; four focused scenarios were added:
 
-The ordinary SDK CLI bootstrap could not complete under this environment's filesystem/mutex restrictions. The compiler and runtime were invoked directly instead. This validates the C# files and executed contract checks, not an SDK project build or Unity compilation. See [sample instructions](../../samples/scene-transitions/README.md).
+- Unavailable destination releases ownership and permits a valid retry.
+- A synchronous backend exception releases ownership, preserves its diagnostic across a malformed-name rejection, and clears it on the next admission.
+- A deferred failure holds ownership until settlement; a rejected request cannot disturb the accepted destination.
+- A reentrant availability callback cannot acquire a second transition owner.
+
+The ordinary documented `dotnet run` command was attempted again and failed during SDK initialization with a NuGet-Migrations mutex error. The compiler and runtime were invoked directly instead. This validates the committed C# inputs and executed checks, not an SDK project build or Unity compilation. Private revision records tie exact input hashes and output to the resulting showcase commit, retaining the earlier eight-check results separately. See [sample instructions](../../samples/scene-transitions/README.md).
 
 The existing production EditMode file checks empty/whitespace scene names using the static name helper. It does not demonstrate availability, coroutine lifecycle, overlap, or interruption coverage. Those production tests were inspected, not executed. No Play Mode, Unity build, Android device or gameplay-media verification was performed here.
 
