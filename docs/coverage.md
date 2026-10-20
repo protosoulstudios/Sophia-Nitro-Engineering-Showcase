@@ -14,3 +14,7 @@
 These claims describe inspected implementation. No Unity runtime, device, rendering, performance, or store verification is asserted. Private review records retain the source revision and evidence mapping; they are deliberately outside this showcase.
 
 This independently authored documentation draft contains no production assets, source samples, configuration, or private audit records. Asset redistribution and project publication rights are separate questions. Publication and any reuse terms require owner review. Future updates should follow verified engineering milestones rather than mirror the private project automatically.
+
+## Scene transition example
+
+The [independent demonstration](showcases/scene-transition-management.md) adds eight executed .NET contract checks. These results apply only to the newly authored example, not production Unity behavior. Public code rights and Unity integration remain pending review.
