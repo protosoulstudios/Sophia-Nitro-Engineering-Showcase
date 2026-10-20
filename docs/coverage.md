@@ -22,3 +22,7 @@ The [independent demonstration](showcases/scene-transition-management.md) now ha
 ## Checkpoint and respawn example
 
 The [checkpoint case study](showcases/checkpoint-and-respawn.md) adds twelve executed checks for its independent model: fallback, snapshots/replacement, invalid input, recovery state, stale sessions, unavailable targets, reentrancy and failure recovery. These do not validate production colliders, physics, lifecycle timing, cooldowns or device behavior. Code provenance and public reuse remain pending owner review.
+
+## Save and persistence example
+
+The [persistence case study](showcases/save-and-persistence.md) adds seventeen executed checks for its independent model: validation/defaults, version decisions, backup recovery, injected partial writes, scoped reset and invalid progression values. Twelve checks for each earlier sample were also executed unchanged. These results do not establish Unity JSON behavior, PlayerPrefs durability, physical filesystem guarantees or Android lifecycle outcomes.

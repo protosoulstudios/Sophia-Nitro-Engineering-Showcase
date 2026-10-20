@@ -1,5 +1,9 @@
 # Draft history
 
+## Save and persistence private candidate
+
+Added a source-grounded persistence case study and independently authored versioned settings store, scoped progression model and seventeen passing checks. Both earlier examples remain unchanged and their twelve checks each passed. Documented partial-write and backup-policy limits; no real saves or production scripts were transferred. No final integration or public release is authorized.
+
 ## Checkpoint and respawn private candidate
 
 Added a source-grounded gameplay recovery case study and independently authored C# authority/player model with twelve passing executable checks. Added stale-session, recovery-state and reentrant-call examples without copying production code or modifying the scene transition sample. Unity/device verification and rights approval remain pending.

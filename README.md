@@ -18,6 +18,8 @@ The engineering focus is ownership across scene changes: persistent services coo
 
 [Checkpoint and respawn](docs/showcases/checkpoint-and-respawn.md) focuses on gameplay recovery: scene-local checkpoint ownership, stale-session rejection and supported player-state reset, with an independent C# sample and twelve executed checks. Production Unity physics and lifecycle verification remain pending.
 
+[Save and persistence](docs/showcases/save-and-persistence.md) examines separate progression/settings ownership, validation, backup recovery and scoped reset. Its independent sample exercises partial storage failures and explicit version decisions through seventeen checks, without claiming production durability or filesystem guarantees.
+
 Read the [architecture](docs/architecture.md), [gameplay and persistence](docs/gameplay-and-persistence.md), [mobile and validation](docs/mobile-and-validation.md), [engineering decisions](docs/decisions.md), and [coverage limits](docs/coverage.md). See the [draft history](CHANGELOG.md).
 
 The reviewed project pins Unity 6000.2.14f1. This showcase contains engineering documentation and an independent C# demonstration. It includes no production game source, assets, game build, or license grant. The independent C# examples are clearly identified as demonstrations. Source inspection supports the implementation descriptions; production runtime and Android verification are not claimed. This reconstructed draft is prepared for owner review, not authorized for publication.
