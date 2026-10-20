@@ -18,3 +18,7 @@ This independently authored showcase contains no production assets, production s
 ## Scene transition example
 
 The [independent demonstration](showcases/scene-transition-management.md) now has twelve executed .NET contract checks, including cleanup/retry and reentrant validation scenarios. These results apply only to the newly authored example, not production Unity behavior. Public code rights and Unity integration remain pending review.
+
+## Checkpoint and respawn example
+
+The [checkpoint case study](showcases/checkpoint-and-respawn.md) adds twelve executed checks for its independent model: fallback, snapshots/replacement, invalid input, recovery state, stale sessions, unavailable targets, reentrancy and failure recovery. These do not validate production colliders, physics, lifecycle timing, cooldowns or device behavior. Code provenance and public reuse remain pending owner review.
