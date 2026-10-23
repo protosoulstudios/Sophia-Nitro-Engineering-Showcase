@@ -11,7 +11,7 @@
 | MOBILE-01 | Frame-rate target normalization |
 | VERIFY-01 | Declared test methods and cases |
 
-These claims describe inspected implementation. No Unity runtime, device, rendering, performance, or store verification is asserted. Private review records retain the source revision and evidence mapping; they are deliberately outside this showcase.
+These claims describe inspected implementation; they do **not** claim new independently executed Unity, rendering, performance, or store tests. Separately, the developer reports completing Unity/Android release QA, including a full physical-tablet playthrough and delivery of the v1.0.0 APK/AAB. Those prior observations are historical owner-reported results, not new agent-executed tests. Private review records retain source revisions and claim mappings; they remain outside this showcase.
 
 This independently authored showcase contains no production assets, production source excerpts, game configuration, or private audit records. Asset redistribution and project publication rights are separate questions. Publication and any reuse terms require owner review. Future updates should follow verified engineering milestones rather than mirror the private project automatically.
 
@@ -25,4 +25,4 @@ This independently authored showcase contains no production assets, production s
 
 All 41 checks were rerun for the integration candidate with direct Roslyn compilation and .NET runtime execution. Sample C# behavior is unchanged. Nullable analysis and warnings as errors were enabled. Ordinary SDK commands remain blocked by NuGet-Migrations initialization; an ordinary project build is not claimed.
 
-The [verification matrix](verification-matrix.md) separates these results from production source inspection, planned Editor/Play Mode work and Android tests. The [demonstration plan](demonstration-plan.md) identifies proposed footage, prerequisites and limits. Neither runtime batches nor media capture have been completed. The samples' safeguards must not be attributed to production without source/runtime evidence.
+The [verification matrix](verification-matrix.md) separates these results from production source inspection, planned Editor/Play Mode work and Android tests. The [demonstration plan](demonstration-plan.md) identifies proposed footage, prerequisites and limits. No **new** V1–V4 runtime batches were run during showcase preparation, and no portfolio media has been captured. This is separate from the developer's already completed release QA. Future focused tests are optional when a changed build or specific new claim justifies them. The samples' safeguards must not be attributed to production without source/runtime evidence.
