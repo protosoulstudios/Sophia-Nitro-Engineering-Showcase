@@ -2,7 +2,7 @@
 
 **Unity gameplay and application engineering — Protosoul Studios**
 
-Sophia & Nitro is a Unity Android obstacle-course adventure with two playable characters, three courses, checkpoints and unlockable movement rewards. This portfolio examines the engineering behind scene navigation, player recovery and persistent data.
+Sophia & Nitro is a completed Unity Android obstacle-course adventure with two playable characters, three courses, checkpoints and unlockable movement rewards. Version 1.0.0 was tested on a physical Android tablet and the APK/AAB were delivered to the client, according to the developer's completed-release record. This portfolio examines the engineering behind scene navigation, player recovery and persistent data.
 
 The inspected Protosoul Studios engineering scope includes persistent application services, scene-local gameplay components, character spawning/binding, progression and settings. Three independently authored C# demonstrations make the design principles inspectable without transferring the proprietary Unity project.
 
@@ -24,9 +24,9 @@ The reviewed game pins **Unity 6000.2.14f1**, **URP 17.2.0** and **Input System 
 
 All **41 independent checks** passed in the integration review: 12 transition, 12 checkpoint and 17 persistence checks. Compilation used .NET SDK 8.0.426's Roslyn compiler with nullable analysis and warnings as errors, followed by direct .NET runtime execution. The ordinary SDK run commands remain blocked in this environment by a NuGet-Migrations initialization error; ordinary project builds are not claimed.
 
-These results verify the independent models. Production descriptions are grounded in source inspection; Unity Editor, Play Mode, Android device behavior and gameplay footage remain unverified. The examples do not establish measured performance, crash-safe storage or production failure recovery.
+These results verify the independent models. Production architecture descriptions are grounded in source inspection. Separately, the developer reports completing release QA on the actual Unity/Android game, including a full tablet playthrough, before APK/AAB delivery. That historical testing was **not rerun or independently instrumented in the showcase workflow**; the standalone checks are not substitute production tests. No portfolio footage has been recorded. The examples do not establish measured performance, crash-safe storage or production failure recovery.
 
-See the **[verification matrix](docs/verification-matrix.md)** for executed evidence and efficient runtime test batches, and the **[demonstration plan](docs/demonstration-plan.md)** for proposed footage and its limits. No footage has been recorded for this portfolio.
+See the **[verification matrix](docs/verification-matrix.md)** for the difference between historical game QA, source inspection and independent model checks. The **[demonstration plan](docs/demonstration-plan.md)** and reserved **[gameplay video folder](media/videos/README.md)** describe optional future portfolio footage. No footage has been recorded for this portfolio.
 
 ## Further reading
 
