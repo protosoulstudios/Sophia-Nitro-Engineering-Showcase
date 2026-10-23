@@ -2,9 +2,9 @@
 
 [Portfolio](../README.md) · [Verification matrix](verification-matrix.md)
 
-The minimum useful package is four short gameplay clips plus one clearly labeled synthetic failure segment. Durations below are planning estimates, not existing footage. No screenshots, video, customer saves or demonstration results have been produced for this plan.
+An optional portfolio package can contain up to four short clips of the **already completed and owner-tested** game, plus a separate optional synthetic C# example. Durations below are planning estimates, not existing footage. No screenshots, video, customer saves or new recordings have been produced for this plan. The [video staging directory](../media/videos/README.md) is reserved for future approved files.
 
-## Minimum shot list
+## Suggested shot list — optional, not recorded
 
 | Clip | Approximate content | What the recording can show | What it cannot establish |
 | --- | --- | --- | --- |
@@ -16,11 +16,11 @@ The minimum useful package is four short gameplay clips plus one clearly labeled
 
 ## Prerequisites and capture order
 
-1. Obtain permission for client/project identification and depiction of character models, purchased environment content and any audible third-party material. Permission to discuss code does not establish asset depiction or redistribution rights. Review capture permission before recording; rights clearance must precede any publication.
-2. Use a disposable development profile and synthetic save fixtures. Confirm exact source/build revision, Unity version, device/OS and intended behavior. Never manipulate customer saves or the authoritative production save directory.
-3. Run V1–V3 before capture. Characterize approved V4 fault cases privately before deciding whether they are suitable evidence. Unreproduced source risks must remain labeled as inspection findings.
-4. Capture M1 and M2 in one gameplay session where possible. Capture M3 and M4 as separate relaunch demonstrations; keep synthetic M5 visibly distinct. Disable private notifications and omit personal paths, account details, signing/configuration views and confidential logs. Use captions where audio permissions are unresolved.
-5. Retain the unedited recording privately with a shot log and revision references. Review the final cut for captions, edits, rights and confidentiality. Only then seek explicit owner approval for the selected media and publication destination.
+1. The developer has already reported **general client permission to show the game repository publicly**; do not ask for that same permission again. Before sharing footage publicly, check any separate third-party character, purchased environment, audio, and confidentiality conditions relevant to the actual clip. Recording footage privately is not the same as granting public distribution rights.
+2. Record from the previously working released game or an approved development build. Use a disposable profile only when a settings/progression demo would modify save state. Note actual version and device/OS when available. Never manipulate customer saves or the authoritative production save directory.
+3. **Do not rerun V1–V3 simply to record footage.** The developer's v1.0.0 release QA was already completed. Capture the visible behavior directly; use a *targeted* check only if footage reveals a defect, a different build changes behavior, or a specific engineering claim requires new evidence. Unreproduced source risks remain source-inspection findings.
+4. Capture M1 and M2 in one gameplay session if convenient; M3 and M4 can be separate relaunch demonstrations. M5 is optional and must remain explicitly labeled as the independent C# model, not production gameplay. Disable private notifications and omit personal paths, account details, signing/configuration views and confidential logs. Use captions where audio rights are unclear.
+5. Retain original recordings privately; review any public clip for edits, accuracy, asset/audio terms and confidentiality. Add only approved final clips or approved external links to the reserved video folder and case studies. A source/model-only showcase can continue without video; publication is a separate explicit owner decision.
 
 ## Evidence handoff
 
