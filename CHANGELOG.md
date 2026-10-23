@@ -1,5 +1,9 @@
 # Draft history
 
+## Video staging and release-context reconciliation
+
+Reserved `media/videos/` for future approved gameplay footage without adding placeholder media. Corrected repository-wide verification wording to recognize the developer's previously completed Android v1.0.0 release QA and APK/AAB delivery, while retaining strict separation from the 41 independent C# model checks and from unrun showcase-only V1–V4 procedures. Updated the optional media plan so recording clips does not trigger another general QA campaign. No code or production project changes.
+
 ## Portfolio integration review candidate
 
 Integrated the three examples through a direct README evidence index, consistent case-study navigation and section names, a focused Unity/Android verification matrix and a practical media plan. Removed stale future-example references. All 41 independent checks passed again; no C# behavior or production files changed. Public release remains gated by separate approval and rights review.
