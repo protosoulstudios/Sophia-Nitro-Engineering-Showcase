@@ -8,4 +8,4 @@ These interpretations follow the implemented responsibilities; they are not quot
 - Backup fallback offers a recovery path, while the primary replacement sequence retains a failure window. Future work could test interruption cases and make save outcomes observable.
 - Frame-rate caps express a mobile policy; device measurements are required to assess sustained performance.
 
-These future checks are proposed improvements, not completed work. See [coverage](coverage.md).
+These **specialized future checks** are optional investigation or evidence opportunities, not a statement that general release QA was never completed. The developer already reports completing final Android playthrough testing before client delivery. See [coverage](coverage.md).
