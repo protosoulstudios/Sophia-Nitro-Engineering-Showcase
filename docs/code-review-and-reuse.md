@@ -26,13 +26,13 @@ Reference: [GitHub Docs — Licensing a repository](https://docs.github.com/en/r
 - The client's general permission to show the project publicly has **already been reported by the developer**; it is not a substitute for an applicable third-party asset license or for a decision to grant code reuse rights.
 - No contributions or pull-request-based collaboration program is offered by this portfolio policy. If that changes, decide contribution terms separately.
 
-## Private-release gates
+## Publication gates for the code-first portfolio
 
-This repository remains **PRIVATE**. The owner has specifically chosen to include gameplay videos **before** any public release. Therefore:
+The portfolio can be released with the three written case studies and independent C# demonstrations **without gameplay videos**. Planned footage is a later, optional enhancement; no completed gameplay-video evidence is claimed. Before making the repository public:
 
-1. Keep the prepared code/case studies private until the selected actual gameplay clips have been recorded, reviewed and added or linked.
-2. Confirm authority to publicly display the exact independently prepared samples, plus attribution and any contractual restrictions. Do not infer entitlement solely from separate authorship or use of AI-assisted tooling.
-3. Review the *final* public file inventory, Git history, confidential data patterns, links, current captions and any newly added media.
-4. Obtain the owner's **explicit final go-live instruction** for the exact repository and revision. Do not change visibility, merge default branches, or publish material just because the documentation is ready.
+1. Confirm authority to publicly display the exact independently prepared samples, including contractual restrictions and any required attribution. Do not infer rights solely from separate authorship or AI-assisted tooling.
+2. Review the *final* public file inventory and accessible Git history for confidentiality, credentials, personal data, misleading claims, broken links and unapproved assets. Review each future clip separately before adding it.
+3. Preserve the distinction between developer-reported game release QA, inspected production code and tests of independent illustrative examples. Do not claim footage or additional runtime testing that has not occurred.
+4. Obtain the owner's **explicit final go-live instruction** identifying the repository and approved revision. Preparing or merging a private release candidate does not grant permission to change visibility.
 
 This policy expresses the planned portfolio presentation and non-open-source default; it is **not a substitute for legal review or proof of code ownership**. It may be revisited if the owner later decides to license individual examples.

@@ -1,6 +1,6 @@
 # Checkpoint and respawn demonstration
 
-Independently authored private review candidate, not copied production code or a Unity-ready component. No production assets or dependencies are included. Redistribution rights and reuse terms remain pending; no public license is granted.
+Independently authored demonstration, not copied production code or a Unity-ready component. No production assets or dependencies are included. It is prepared for professional code inspection, subject to owner approval; no public reuse or redistribution license is granted.
 
 - `CheckpointAuthority.cs`: immutable snapshots, scene-session ownership, fallback, activation and recovery boundary.
 - `PlayerRecoveryState.cs`: data-only implementation of explicitly supported pose/motion/input recovery.

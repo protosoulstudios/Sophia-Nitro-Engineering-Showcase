@@ -1,6 +1,6 @@
 # Save and persistence demonstration
 
-Independently authored private review candidate, not copied Unity production code. No real save data, assets or filesystem adapter is included. Public reuse rights and publication remain pending owner review; no public license is supplied.
+Independently authored demonstration, not copied Unity production code. No real save data, assets or filesystem adapter is included. It is prepared for professional code inspection, subject to owner approval; no public reuse or redistribution license is granted.
 
 - `SettingsStore.cs`: version-one model, validation, read provenance, guarded writes and known-valid backup policy.
 - `AdventurePreferences.cs`: two-key synthetic progression model and narrowly scoped reset.

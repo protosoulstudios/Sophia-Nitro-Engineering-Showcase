@@ -1,5 +1,9 @@
 # Draft history
 
+## Code-first release preparation — October 24, 2026
+
+Prepared the three previously audited engineering examples for a potential **code-first** portfolio launch. Reconciled public-facing README, case-study, example, verification, rights-policy and media-staging language: gameplay recordings are planned additions, not prerequisites or existing evidence. No production code, media or third-party assets were added, and no new executable or Unity tests are claimed. Making the repository public still requires a separate final owner instruction after rights and content review. Earlier entries describe historical decisions and are preserved as such.
+
 ## Private quality audit — October 23, 2026
 
 Rechecked the three case studies and their unchanged independent C# implementations against representative source-inspected Unity systems. Corrected stale language that presented new formal Unity verification as a prerequisite despite the developer's previously completed Android release QA. Clarified that detailed failure/edge-case tests are optional claim-specific work. Corrected the navigation video shot order, made the three .NET 8 sample run commands platform-neutral, and added a repository `.gitignore` to prevent generated SDK outputs from being tracked. Prior **41 independent model checks** remain historical reported results; **no new code execution or Unity testing** was conducted in this document-only audit. Publication remains blocked by the owner's video-before-release decision and final review.

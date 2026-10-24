@@ -1,6 +1,6 @@
 # Scene transition contract demonstration
 
-Independently authored for this portfolio task. Not copied production code and not a runnable Unity scene. Private review candidate; public redistribution and reuse terms remain pending. No license grant is supplied.
+Independently authored for this portfolio task. Not copied production code and not a runnable Unity scene. Prepared for professional code inspection; no public reuse or redistribution license is granted. Publication is subject to owner approval.
 
 `TransitionCoordinator.cs` contains the coordinator and backend contract. `Program.cs` supplies a synthetic backend and twelve executable checks. No external packages, game assets, configuration or production scripts are required.
 
