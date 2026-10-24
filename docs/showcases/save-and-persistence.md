@@ -68,9 +68,11 @@ The ordinary documented dotnet command was attempted but failed at SDK NuGet-Mig
 
 Existing production EditMode tests cover default settings, frame-rate normalization, quality bounds, basic JSON round trip, absent-file defaults and filename conventions, alongside unrelated helpers. They were inspected, not executed. They do not establish production corruption recovery, backup preservation, interrupted-write behavior or progression reset coverage.
 
-## Unity and Android verification required
+## Optional targeted verification for deeper claims
 
-| Check | Required evidence |
+The developer reports that progression, rewards and settings worked in the delivered v1.0.0 Android game and were tested before client handoff. The cases below address **more specific persistence or failure-recovery claims**. Do not repeat full release QA just to record settings or reward footage. Run a focused test only when a stronger claim, changed build or reproduced defect warrants it.
+
+| Check | Additional evidence if a targeted verification is justified |
 | --- | --- |
 | Settings round trip | Change each actual setting, relaunch, inspect value and applied audio/quality/FPS policy |
 | Progression | Complete a controlled course, relaunch and verify level/reward/character data independently |
@@ -84,6 +86,6 @@ Never corrupt real customer saves or a production save directory for this demons
 
 ## Proposed demonstration footage
 
-After rights clearance, show a setting change surviving relaunch, then a controlled level completion and relaunch preserving the earned progression. Demonstrate invalid-save fallback separately with clearly labeled synthetic data and observable results. Review client permission, character/environment/audio depiction rights and logs/paths before capture. No footage was generated or published.
+When the owner is ready to film and clip-specific rights are reviewed, show a setting change surviving relaunch, then a controlled level completion and relaunch preserving the earned progression. A synthetic invalid-save fallback demonstration is optional, and if included must be labeled as an **independent model**, not production gameplay. The developer has already reported general client permission to show the project publicly; inspect actual clip-specific character/environment/audio restrictions and avoid private logs/paths. No footage was generated or published.
 
-The next step is owner review and controlled Unity/platform verification. This integrated candidate remains on a private review branch; no merge or public release is authorized.
+The integrated example has already undergone private code and narrative review. The next portfolio step is capturing selected gameplay clips and completing one final release-content review; stronger platform or fault-recovery claims would require only the specifically relevant evidence. This candidate remains private; no merge or publication is authorized.
