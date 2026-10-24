@@ -63,9 +63,11 @@ The ordinary SDK run command was attempted but failed during NuGet-Migrations mu
 
 The inspected production test file contains general logic checks, not checkpoint/respawn tests. A project C# filename scan found no additional test files, and no assembly definitions were found. Test discovery and execution in Unity were not verified. No Editor, Play Mode, Android, scene-reload or physics test was run here.
 
-## Unity and Android verification required
+## Optional targeted verification for deeper claims
 
-| Scenario | Evidence to collect in Unity, then on Android where relevant |
+The developer previously verified normal checkpoint, FallZone and hazard recovery while testing the delivered Android game. The table below describes **additional edge-case observations**, not an unfinished general-release QA checklist. Perform these only for a new claim, reproduced issue or changed build; routine gameplay footage needs no blanket recheck.
+
+| Scenario | Evidence to collect if specifically testing a stronger claim |
 | --- | --- |
 | Initial spawn | Each character spawns once; default pose, controller, camera and manager bindings are correct |
 | Checkpoint activation | Trigger receives the correct collider/controller; destination and feedback update once as configured |
@@ -79,6 +81,6 @@ Use controlled synthetic scenes for failure cases and record exact source revisi
 
 ## Proposed demonstration footage
 
-After client and asset-rights clearance, a short clip should show initial spawn → checkpoint activation → fall → checkpoint recovery → second fall/recovery → scene restart returning to initial state. Compare Sophia and Nitro if collider/rig behavior differs. Review character and purchased-environment depiction rights, audio and confidential editor/log content before recording. No footage was generated or published.
+When the owner is ready to film, a short clip can show initial spawn → checkpoint activation → fall → checkpoint recovery → second fall/recovery → scene restart returning to initial state. The client's general public-display permission is already owner-reported; review distinct media/asset terms for the selected clip. Compare Sophia and Nitro if collider/rig behavior differs. Review character and purchased-environment depiction rights, audio and confidential editor/log content before recording. No footage was generated or published.
 
-The next decision is owner review of the code, provenance and explanation, followed by controlled Unity verification. The [persistence example](save-and-persistence.md) separately examines saved data and reset scope.
+The private integration has already reviewed the code, provenance and explanation. The remaining presentation step is to record selected footage and then complete the final release-content review; targeted Unity checks are optional where new technical claims warrant them. The [persistence example](save-and-persistence.md) separately examines saved data and reset scope.
