@@ -6,7 +6,7 @@
 
 Players expect settings and earned progress to survive a restart, while Reset Adventure should not erase their character choice or preferences. The engineering problem is to give each data set an explicit owner, validate stored input, and make recovery behavior understandable when storage is missing, malformed or fails mid-write.
 
-The [independent settings store](../../samples/save-persistence/SettingsStore.cs), [scoped progression example](../../samples/save-persistence/AdventurePreferences.cs) and [executable checks](../../samples/save-persistence/Program.cs) demonstrate data contracts, recovery decisions and partial-write testing. They are newly authored illustrations, not copied production code or a Unity persistence replacement. Code provenance and the no-general-reuse policy are documented; publication requires an explicit owner decision.
+The [independent settings store](../../samples/save-persistence/SettingsStore.cs), [scoped progression example](../../samples/save-persistence/AdventurePreferences.cs) and [executable checks](../../samples/save-persistence/Program.cs) demonstrate data contracts, recovery decisions and partial-write testing. They are newly authored illustrations, not copied production code or a Unity persistence replacement. Code provenance and the no-general-reuse policy are documented; the owner approved this public portfolio release.
 
 ## Production implementation inspected
 
@@ -62,7 +62,7 @@ Version-one optional fields use declared sample defaults. Unknown properties are
 
 Seventeen persistence checks passed using SDK 8.0.426's Roslyn compiler with .NET 8 references, nullable analysis and warnings as errors. They cover missing defaults, round trip, optional-field defaults, malformed/wrong-type JSON, normalization, backup recovery, both-invalid fallback, version refusals, read errors, write order, partial failures at all three stages, first-save failure, scoped reset and invalid progression values.
 
-The two earlier examples were also compiled and executed unchanged: twelve scene-transition and twelve checkpoint checks passed. All results concern independent samples only. Private records tie input hashes and captured output to this candidate's exact commit.
+The two earlier examples were also compiled and executed unchanged: twelve scene-transition and twelve checkpoint checks passed. All results concern independent samples only. Private records tie input hashes and captured output to the reviewed prepublication commit.
 
 The ordinary documented dotnet command was attempted but failed at SDK NuGet-Migrations mutex initialization. Direct compiler/runtime execution succeeded; an ordinary SDK project build is not claimed. See [sample instructions](../../samples/save-persistence/README.md).
 
@@ -88,4 +88,4 @@ Never corrupt real customer saves or a production save directory for this demons
 
 When the owner is ready to film and clip-specific rights are reviewed, show a setting change surviving relaunch, then a controlled level completion and relaunch preserving the earned progression. A synthetic invalid-save fallback demonstration is optional, and if included must be labeled as an **independent model**, not production gameplay. The developer has already reported general client permission to show the project publicly; inspect actual clip-specific character/environment/audio restrictions and avoid private logs/paths. No footage was generated or published.
 
-The integrated example has undergone code and narrative review for a code-first portfolio. Public release requires the final content/rights decision and explicit owner approval; gameplay clips can be added afterward. Stronger platform or fault-recovery claims would require specifically relevant evidence. This document alone does not authorize publication.
+The integrated example underwent code and narrative review and is included in the owner-approved public code-first portfolio. Future gameplay clips require separate content and rights review. Stronger platform or fault-recovery claims would require specifically relevant evidence. This document does not grant general code-reuse or redistribution rights.

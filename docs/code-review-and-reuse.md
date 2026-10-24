@@ -10,7 +10,7 @@ The case studies describe source-inspected production behavior and limitations. 
 
 ## Public visibility does not grant a general code license
 
-**Current release choice: allow professional inspection when approved for publication, without granting an open-source or general reuse license.** No MIT, Apache, GPL, or other blanket license is added to this candidate.
+**Current published release:** This repository is publicly visible for professional inspection; no open-source or general reuse license has been granted. No MIT, Apache, GPL or other blanket license has been added.
 
 Absent a separate license from the applicable rights holder, reviewers should not assume permission to reproduce, redistribute, incorporate, or modify this code for their own projects. GitHub's Terms of Service permit platform-related viewing and forking of public repositories; applicable legal exceptions may also apply. A public repository is **not automatically open source**.
 
@@ -23,16 +23,16 @@ Reference: [GitHub Docs — Licensing a repository](https://docs.github.com/en/r
 - The examples are independently prepared portfolio models. Their technical similarity to inspected gameplay responsibilities **does not make them production code**.
 - No playable game, original Unity source, client save data, signing keys, purchased raw assets or private audit ledgers are distributed in this showcase.
 - Third-party game models, environments and audio may be visible **in future approved footage**, but depicting a game is distinct from redistributing its underlying asset files. Clip-specific terms still require review.
-- The client's general permission to show the project publicly has **already been reported by the developer**; it is not a substitute for an applicable third-party asset license or for a decision to grant code reuse rights.
+- The developer has **already reported general client permission to showcase the game publicly in this engineering portfolio** (not to publish the private Unity production repository); it is not a substitute for an applicable third-party asset license or for a decision to grant code reuse rights.
 - No contributions or pull-request-based collaboration program is offered by this portfolio policy. If that changes, decide contribution terms separately.
 
-## Publication gates for the code-first portfolio
+## Publication record and continuing safeguards
 
-The portfolio can be released with the three written case studies and independent C# demonstrations **without gameplay videos**. Planned footage is a later, optional enhancement; no completed gameplay-video evidence is claimed. Before making the repository public:
+The owner approved this code-first showcase for public release on October 24, 2026, with its three case studies and independent C# demonstrations **without gameplay videos**. No completed gameplay-video evidence is claimed. The prepublication review established the following safeguards, which continue to apply to later additions:
 
-1. Confirm authority to publicly display the exact independently prepared samples, including contractual restrictions and any required attribution. Do not infer rights solely from separate authorship or AI-assisted tooling.
-2. Review the *final* public file inventory and accessible Git history for confidentiality, credentials, personal data, misleading claims, broken links and unapproved assets. Review each future clip separately before adding it.
-3. Preserve the distinction between developer-reported game release QA, inspected production code and tests of independent illustrative examples. Do not claim footage or additional runtime testing that has not occurred.
-4. Obtain the owner's **explicit final go-live instruction** identifying the repository and approved revision. Preparing or merging a private release candidate does not grant permission to change visibility.
+1. Public display was authorized by the owner after the developer reported general client permission to showcase the game. Each new addition still needs appropriate content, contractual, attribution and third-party rights review. Independent authorship or AI-assisted tooling alone does not establish rights to distribute someone else's work.
+2. The release inventory and accessible Git history were reviewed for confidentiality, credentials, personal information, misleading claims, broken links and unapproved assets. Check new commits and each proposed clip before adding them.
+3. Continue distinguishing developer-reported game release QA, inspected production code and tests of independent illustrative examples. Do not imply footage or additional runtime testing exists before it is recorded or performed.
+4. The owner issued the explicit go-live instruction before public visibility changed. This approved release does not grant blanket permission for future media, redistribution of the private Unity project or general code reuse.
 
-This policy expresses the planned portfolio presentation and non-open-source default; it is **not a substitute for legal review or proof of code ownership**. It may be revisited if the owner later decides to license individual examples.
+This policy describes the published portfolio's non-open-source default; it is **not a substitute for legal review or proof of code ownership**. It may be revisited if the rights holder later chooses to license individual examples.

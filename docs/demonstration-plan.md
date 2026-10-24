@@ -2,7 +2,7 @@
 
 [Portfolio](../README.md) · [Verification matrix](verification-matrix.md)
 
-The owner has chosen a **code-first portfolio release**, with gameplay footage to be added later if and when ready. The optional future package contains up to four short clips of the **already completed and owner-tested** game, plus a separate optional synthetic C# example. The exact clip selection can be finalized after capture; a new full QA campaign is not required. Durations below are planning estimates, not existing footage. No screenshots, video, customer saves or new recordings have been produced for this plan. The [video staging directory](../media/videos/README.md) is reserved for future approved files.
+The owner approved and published the **code-first engineering showcase** on October 24, 2026, with gameplay footage to be added later if and when ready. The optional future package contains up to four short clips of the **already completed and owner-tested** game, plus a separate optional synthetic C# example. The exact clip selection can be finalized after capture; a new full QA campaign is not required. Durations below are planning estimates, not existing footage. No screenshots, video, customer saves or new recordings have been produced for this plan. The [video staging directory](../media/videos/README.md) is reserved for future approved files.
 
 ## Suggested shot list — optional, not recorded
 
@@ -16,14 +16,14 @@ The owner has chosen a **code-first portfolio release**, with gameplay footage t
 
 ## Prerequisites and capture order
 
-1. The developer has already reported **general client permission to show the game repository publicly**; do not ask for that same permission again. Before sharing footage publicly, check any separate third-party character, purchased environment, audio, and confidentiality conditions relevant to the actual clip. Recording footage privately is not the same as granting public distribution rights.
+1. The developer has already reported **general client permission to showcase the game publicly in this engineering portfolio**; the original Unity production repository remains private. Do not ask again for that same general permission. Before sharing footage publicly, check third-party character, purchased environment, audio and confidentiality conditions relevant to the specific clip. Recording privately does not itself grant public distribution rights.
 2. Record from the previously working released game or an approved development build. Use a disposable profile only when a settings/progression demo would modify save state. Note actual version and device/OS when available. Never manipulate customer saves or the authoritative production save directory.
 3. **Do not rerun V1–V3 simply to record footage.** The developer's v1.0.0 release QA was already completed. Capture the visible behavior directly; use a *targeted* check only if footage reveals a defect, a different build changes behavior, or a specific engineering claim requires new evidence. Unreproduced source risks remain source-inspection findings.
 4. Capture M1 and M2 in one gameplay session if convenient; M3 and M4 can be separate relaunch demonstrations. M5 is optional and must remain explicitly labeled as the independent C# model, not production gameplay. Disable private notifications and omit personal paths, account details, signing/configuration views and confidential logs. Use captions where audio rights are unclear.
-5. Retain original recordings privately; review any public clip for edits, accuracy, asset/audio terms and confidentiality. Add only approved final clips or approved external links to the reserved video folder and case studies. The code-first repository may be released without videos after its own rights/content review and explicit owner go-live decision; future clips require independent clearance before addition.
+5. Retain original recordings privately; review each public clip for edits, accuracy, asset/audio terms and confidentiality. Add only approved final clips or approved external links to the reserved video folder and case studies. The code-first showcase is already public without videos; future clips still require independent clearance before addition.
 
 ## Evidence handoff
 
 A private media record should identify clip ID, source/build revision, device/OS, fixture, observation, edits, file hash, clearance scope and owner approval. A future public caption should state what was observed and the build/platform context without exposing private records or paths. No placeholder image, download link or claim that a planned shot already exists should be added.
 
-Media complements the [case studies](../README.md#explore-the-engineering) and executable checks; it does not replace them. Select launch claims according to the evidence actually captured, including any known limitations.
+Media complements the [case studies](../README.md#explore-the-engineering) and executable checks; it does not replace them. Describe each future clip only to the extent supported by the evidence actually captured, including any known limitations.

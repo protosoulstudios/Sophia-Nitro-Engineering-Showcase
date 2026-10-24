@@ -6,7 +6,7 @@
 
 A fall should cost the player progress from the last safe point, not leave the character carrying the motion that caused the failure. The engineering challenge is to give checkpoint ownership a clear lifetime and recover the correct player without making every hazard understand movement internals.
 
-This case study examines the game's scene-local checkpoint authority and typed respawn boundary. The [independent C# authority](../../samples/checkpoint-respawn/CheckpointAuthority.cs), [player recovery model](../../samples/checkpoint-respawn/PlayerRecoveryState.cs) and [executable checks](../../samples/checkpoint-respawn/Program.cs) let a client inspect responsibility separation and recovery edge cases. They are newly authored illustrations, not extracted production scripts or a Unity-ready replacement. Professional inspection does not grant reuse; publication requires an explicit owner decision.
+This case study examines the game's scene-local checkpoint authority and typed respawn boundary. The [independent C# authority](../../samples/checkpoint-respawn/CheckpointAuthority.cs), [player recovery model](../../samples/checkpoint-respawn/PlayerRecoveryState.cs) and [executable checks](../../samples/checkpoint-respawn/Program.cs) let a client inspect responsibility separation and recovery edge cases. They are newly authored illustrations, not extracted production scripts or a Unity-ready replacement. Professional inspection does not grant general reuse; the owner approved this public portfolio release.
 
 ## Production implementation inspected
 
@@ -59,7 +59,7 @@ Production has no corresponding token model, central reentrant guard or structur
 
 The twelve independent contract checks passed after compilation using SDK 8.0.426's Roslyn compiler with .NET 8 references, nullable analysis and warnings as errors. Checks cover initial fallback, activation snapshot isolation, replacement, invalid activation, repeated motion/input recovery, stale work after reset, invalid reset preservation, unavailable targets, nested requests, partial failure/retry, availability exceptions and cross-authority rejection.
 
-The ordinary SDK run command was attempted but failed during NuGet-Migrations mutex initialization. Direct compiler/runtime execution succeeded. The [sample instructions](../../samples/checkpoint-respawn/README.md) distinguish that result from a verified SDK project build. Private revision records tie the actual output and file hashes to the committed candidate.
+The ordinary SDK run command was attempted but failed during NuGet-Migrations mutex initialization. Direct compiler/runtime execution succeeded. The [sample instructions](../../samples/checkpoint-respawn/README.md) distinguish that result from a verified SDK project build. Private revision records tie the actual output and file hashes to the reviewed prepublication revision.
 
 The inspected production test file contains general logic checks, not checkpoint/respawn tests. A project C# filename scan found no additional test files, and no assembly definitions were found. Test discovery and execution in Unity were not verified. No Editor, Play Mode, Android, scene-reload or physics test was run here.
 
@@ -83,4 +83,4 @@ Use controlled synthetic scenes for failure cases and record exact source revisi
 
 When the owner is ready to film, a short clip can show initial spawn → checkpoint activation → fall → checkpoint recovery → second fall/recovery → scene restart returning to initial state. The client's general public-display permission is already owner-reported; review distinct media/asset terms for the selected clip. Compare Sophia and Nitro if collider/rig behavior differs. Review character and purchased-environment depiction rights, audio and confidential editor/log content before recording. No footage was generated or published.
 
-The integration review covered the code, provenance narrative and explanation. Public release requires the final content/rights decision and explicit owner approval. Gameplay footage can be added later; targeted Unity checks remain optional when new technical claims warrant them. The [persistence example](save-and-persistence.md) separately examines saved data and reset scope.
+The integration review covered the code, provenance narrative and explanation. This case study is part of the owner-approved public code-first showcase; future footage still requires clip-specific rights review. Targeted Unity checks remain optional when new technical claims warrant them. The [persistence example](save-and-persistence.md) separately examines saved data and reset scope.

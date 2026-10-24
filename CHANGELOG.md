@@ -1,4 +1,8 @@
-# Draft history
+# Change history
+
+## Public release and documentation reconciliation — October 24, 2026
+
+The owner authorized publication of `protosoulstudios/Sophia-Nitro-Engineering-Showcase` under the no-general-reuse policy, with gameplay videos deferred. GitHub subsequently confirmed public visibility, a protected `main` branch and the separate private production repository. Reconciled prepublication wording across public-facing documentation and sample READMEs while preserving historical preparation entries. Reviewed 29 tracked files and 69 internal Markdown links/anchors without broken targets. No C# sample behavior, execution results, production assets, playable build or footage were changed or rerun.
 
 ## Final private code-first consistency review — October 24, 2026
 
