@@ -1,5 +1,10 @@
 # Draft history
 
+## Private code-review and pre-video release gate
+
+Defined a professional code-inspection policy without adopting an open-source or general reuse license. Preserved the owner's decision to keep the showcase private and add selected gameplay recordings before any public release. Updated README, video staging and verification guidance; no gameplay QA rerun, model-code change, publication or default-branch merge.
+
+
 ## Video staging and release-context reconciliation
 
 Reserved `media/videos/` for future approved gameplay footage without adding placeholder media. Corrected repository-wide verification wording to recognize the developer's previously completed Android v1.0.0 release QA and APK/AAB delivery, while retaining strict separation from the 41 independent C# model checks and from unrun showcase-only V1–V4 procedures. Updated the optional media plan so recording clips does not trigger another general QA campaign. No code or production project changes.
