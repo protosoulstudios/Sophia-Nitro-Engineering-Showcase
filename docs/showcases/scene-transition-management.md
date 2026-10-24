@@ -64,9 +64,11 @@ The ordinary documented `dotnet run` command was attempted again and failed duri
 
 The existing production EditMode file checks empty/whitespace scene names using the static name helper. It does not demonstrate availability, coroutine lifecycle, overlap, or interruption coverage. Those production tests were inspected, not executed. No Play Mode, Unity build, Android device or gameplay-media verification was performed here.
 
-## Unity and Android verification required
+## Optional targeted verification for deeper claims
 
-| Scenario | Required observation in a controlled Editor test |
+The completed v1.0.0 game was previously tested by the developer on an Android tablet before delivery. The following unexecuted **showcase-specific edge-case checks** would be relevant only if making stronger claims, investigating a reproduced problem, or validating a changed build. They are **not a prerequisite for filming ordinary, already-tested gameplay**.
+
+| Scenario | Observation if a focused Editor check is warranted |
 | --- | --- |
 | Successful route | Bootstrap reaches menu; selected course loads through Loading once; state returns Idle |
 | Invalid request | Empty, unavailable and Loading-as-target requests do not start unwanted loads |
@@ -80,6 +82,6 @@ Use synthetic scenes before interrupting real game transitions. Record source re
 
 ## Proposed demonstration footage
 
-After permission clearance, capture a short menu → character selection → Loading → course sequence, followed by one restart. Pair it with a development-only state trace and a clearly labeled synthetic overlap test. Avoid credentials, editor paths and private logs. Clear rights to depict characters, purchased environments, audio and client work first. No clip has been produced.
+When the owner is ready, capture a short Main Menu → Level Select → EASY → Sophia or Nitro → Loading → Level_Easy sequence, followed by one restart. A state trace or synthetic overlap test is **optional** and should be added only to support a specific deeper technical claim. Avoid credentials, editor paths and private logs. The client has already granted general public-display permission according to the developer; review any distinct third-party character, environment and audio conditions before publishing the actual clip. No clip has been produced.
 
-The next portfolio step is owner review of this independent code and its relationship to production, followed by Unity integration verification. The [checkpoint](checkpoint-and-respawn.md) and [persistence](save-and-persistence.md) examples cover complementary gameplay and data responsibilities.
+The independent code and relationship to production have already been reviewed as part of the private integration. The remaining portfolio presentation step is filming approved gameplay, followed by one final release-content review; do not repeat general release QA. The [checkpoint](checkpoint-and-respawn.md) and [persistence](save-and-persistence.md) examples cover complementary gameplay and data responsibilities.
