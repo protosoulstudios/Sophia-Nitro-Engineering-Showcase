@@ -8,4 +8,4 @@ DATA-01: Progression preferences store character choice, pending level, highest 
 
 DATA-02: The save service writes a temporary JSON file, copies an existing primary to backup, deletes the old primary, then moves the temporary file. Loading tries the primary and then backup. The delete/move interval is a failure window: this is not a guaranteed atomic replacement. Save catches and logs exceptions rather than returning a success result.
 
-Recovery and reset behavior need runtime tests; the inspection establishes code paths, not fault-injection outcomes.
+The developer's v1.0.0 release record already reports working checkpoint recovery, progression, and adventure reset in the shipped Android game. **Fault-injected save replacement, malformed-file recovery, and narrowly defined interruption cases remain source-inspected only**; new targeted tests would be needed before claiming those particular failure guarantees. The inspection here establishes source paths rather than new fault-injection outcomes.
