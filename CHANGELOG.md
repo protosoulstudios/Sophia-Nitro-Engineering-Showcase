@@ -1,5 +1,9 @@
 # Draft history
 
+## Final private code-first consistency review — October 24, 2026
+
+Rechecked the complete merged showcase against the unchanged production source baseline and preserved C# check evidence. Reviewed the 29-file current tree, 32-commit pre-audit history, all 69 internal Markdown links, source/model claim boundaries and code-inspection rights language. Reconciled outdated private-candidate phrasing in case-study introductions and source-file header comments; the three C# implementation edits affect comments only, not executable statements, and the contract-check programs are unchanged. No new SDK compilation, Unity tests, Android tests or footage are claimed. Private project-state and publication-readiness records are maintained separately; this entry does not authorize publication.
+
 ## Code-first release preparation — October 24, 2026
 
 Prepared the three previously audited engineering examples for a potential **code-first** portfolio launch. Reconciled public-facing README, case-study, example, verification, rights-policy and media-staging language: gameplay recordings are planned additions, not prerequisites or existing evidence. No production code, media or third-party assets were added, and no new executable or Unity tests are claimed. Making the repository public still requires a separate final owner instruction after rights and content review. Earlier entries describe historical decisions and are preserved as such.

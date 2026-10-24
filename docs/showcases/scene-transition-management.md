@@ -8,7 +8,7 @@ Navigation input can arrive repeatedly while a scene is still loading, and the s
 
 This example lets a client inspect how the developer separates coordination from engine calls, defines state and failure contracts, and verifies edge cases. Its checks demonstrate those skills in an independent C# model; they do not establish production Unity reliability or device performance.
 
-Start with the [C# coordinator](../../samples/scene-transitions/TransitionCoordinator.cs), then inspect the [executable contract checks](../../samples/scene-transitions/Program.cs). This is an independently authored, runnable .NET demonstration inspired by inspected responsibilities in the game. It is not extracted production code, a Unity adapter, or evidence that the game passed these tests. Code and narrative remain private review candidates pending owner approval and reuse-rights review; no public license is granted.
+Start with the [C# coordinator](../../samples/scene-transitions/TransitionCoordinator.cs), then inspect the [executable contract checks](../../samples/scene-transitions/Program.cs). This is an independently authored, runnable .NET demonstration inspired by inspected responsibilities in the game. It is not extracted production code, a Unity adapter, or evidence that the game passed these tests. Code and narrative are prepared for owner-approved professional inspection; no general reuse license is granted.
 
 ## Production implementation inspected
 

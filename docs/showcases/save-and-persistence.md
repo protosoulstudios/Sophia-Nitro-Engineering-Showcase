@@ -6,7 +6,7 @@
 
 Players expect settings and earned progress to survive a restart, while Reset Adventure should not erase their character choice or preferences. The engineering problem is to give each data set an explicit owner, validate stored input, and make recovery behavior understandable when storage is missing, malformed or fails mid-write.
 
-The [independent settings store](../../samples/save-persistence/SettingsStore.cs), [scoped progression example](../../samples/save-persistence/AdventurePreferences.cs) and [executable checks](../../samples/save-persistence/Program.cs) demonstrate data contracts, recovery decisions and partial-write testing. They are newly authored illustrations, not copied production code or a Unity persistence replacement. Code provenance, reuse terms and public publication remain subject to owner review.
+The [independent settings store](../../samples/save-persistence/SettingsStore.cs), [scoped progression example](../../samples/save-persistence/AdventurePreferences.cs) and [executable checks](../../samples/save-persistence/Program.cs) demonstrate data contracts, recovery decisions and partial-write testing. They are newly authored illustrations, not copied production code or a Unity persistence replacement. Code provenance and the no-general-reuse policy are documented; publication requires an explicit owner decision.
 
 ## Production implementation inspected
 

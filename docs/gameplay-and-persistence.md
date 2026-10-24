@@ -2,7 +2,7 @@
 
 GAME-01: The scene-local manager records checkpoint position and rotation. Its typed respawn method accepts a player controller and delegates repositioning to that controller. The checkpoint is transient scene state, not a saved continuation across application sessions.
 
-GAME-02: The progression component guards repeated completion within its instance, unlocks the configured reward and optionally the next level, and requests transitions through the loading service. Replay requests another scene without clearing progression. Configuration determines each finisher's specific reward; this draft does not claim serialized bindings were playtested.
+GAME-02: The progression component guards repeated completion within its instance, unlocks the configured reward and optionally the next level, and requests transitions through the loading service. Replay requests another scene without clearing progression. Configuration determines each finisher's specific reward; this source inspection does not independently reverify serialized bindings or the developer's completed release QA.
 
 DATA-01: Progression preferences store character choice, pending level, highest unlocked level bounded to one through three, and reward flags. Reset removes progression and reward keys while preserving character choice. Settings have a separate JSON persistence path.
 

@@ -1,5 +1,5 @@
-// Independently authored private portfolio candidate, not production Unity code.
-// Public redistribution and reuse terms remain pending owner review.
+// Independently authored portfolio demonstration, not production Unity code.
+// Prepared for professional inspection. No general reuse or redistribution license is granted.
 using System.Text.Json;
 
 namespace Showcase.SavePersistence;

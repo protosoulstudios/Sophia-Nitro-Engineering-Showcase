@@ -1,5 +1,5 @@
 // Independently authored portfolio demonstration; not extracted production code.
-// Private review candidate. Redistribution approval and reuse terms are pending.
+// Prepared for professional inspection. No general reuse or redistribution license is granted.
 namespace Showcase.SceneTransitions;
 
 public enum TransitionState { Idle, LoadingIntermediary, LoadingDestination }

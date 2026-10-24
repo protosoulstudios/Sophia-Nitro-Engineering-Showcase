@@ -6,7 +6,7 @@
 
 A fall should cost the player progress from the last safe point, not leave the character carrying the motion that caused the failure. The engineering challenge is to give checkpoint ownership a clear lifetime and recover the correct player without making every hazard understand movement internals.
 
-This case study examines the game's scene-local checkpoint authority and typed respawn boundary. The [independent C# authority](../../samples/checkpoint-respawn/CheckpointAuthority.cs), [player recovery model](../../samples/checkpoint-respawn/PlayerRecoveryState.cs) and [executable checks](../../samples/checkpoint-respawn/Program.cs) let a client inspect responsibility separation and recovery edge cases. They are newly authored illustrations, not extracted production scripts or a Unity-ready replacement. Rights and public publication remain pending review.
+This case study examines the game's scene-local checkpoint authority and typed respawn boundary. The [independent C# authority](../../samples/checkpoint-respawn/CheckpointAuthority.cs), [player recovery model](../../samples/checkpoint-respawn/PlayerRecoveryState.cs) and [executable checks](../../samples/checkpoint-respawn/Program.cs) let a client inspect responsibility separation and recovery edge cases. They are newly authored illustrations, not extracted production scripts or a Unity-ready replacement. Professional inspection does not grant reuse; publication requires an explicit owner decision.
 
 ## Production implementation inspected
 

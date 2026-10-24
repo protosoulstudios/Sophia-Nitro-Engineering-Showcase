@@ -1,5 +1,5 @@
-// Independently authored private portfolio candidate. Not copied Unity production code.
-// Public redistribution and reuse terms remain pending owner review.
+// Independently authored portfolio demonstration. Not copied Unity production code.
+// Prepared for professional inspection. No general reuse or redistribution license is granted.
 using System.Numerics;
 
 namespace Showcase.CheckpointRespawn;
