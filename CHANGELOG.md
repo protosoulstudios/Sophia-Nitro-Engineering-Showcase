@@ -1,5 +1,10 @@
 # Draft history
 
+## Private quality audit — October 23, 2026
+
+Rechecked the three case studies and their unchanged independent C# implementations against representative source-inspected Unity systems. Corrected stale language that presented new formal Unity verification as a prerequisite despite the developer's previously completed Android release QA. Clarified that detailed failure/edge-case tests are optional claim-specific work. Corrected the navigation video shot order, made the three .NET 8 sample run commands platform-neutral, and added a repository `.gitignore` to prevent generated SDK outputs from being tracked. Prior **41 independent model checks** remain historical reported results; **no new code execution or Unity testing** was conducted in this document-only audit. Publication remains blocked by the owner's video-before-release decision and final review.
+
+
 ## Private code-review and pre-video release gate
 
 Defined a professional code-inspection policy without adopting an open-source or general reuse license. Preserved the owner's decision to keep the showcase private and add selected gameplay recordings before any public release. Updated README, video staging and verification guidance; no gameplay QA rerun, model-code change, publication or default-branch merge.
