@@ -1,6 +1,6 @@
 # Gameplay video staging
 
-This directory is reserved for **future, rights-reviewed portfolio footage** for *Sophia & Nitro: Sweetland Adventures*. **No footage has been recorded or added yet.** The game version 1.0.0 has already been tested on Android and delivered to the client (developer-reported); recording portfolio clips is a separate presentation task, **not a request to repeat full game QA**.
+This directory is reserved for **future, rights-reviewed portfolio footage** for *Sophia & Nitro: Sweetland Adventures*. **No footage has been recorded or added yet.** The owner has chosen to **include actual gameplay videos before the repository is made public**. The game version 1.0.0 has already been tested on Android and delivered to the client (developer-reported); recording portfolio clips is a separate presentation task, **not a request to repeat full game QA**.
 
 ## Planned clips
 
@@ -22,4 +22,4 @@ The [existing demonstration plan](../../docs/demonstration-plan.md) contains opt
 - Keep original capture files and private evidence/clearance details **outside** the public-facing showcase. For each final clip, retain the source/build version, device, edits, and what the video actually demonstrates in a private record. Label cuts and synthetic footage accurately.
 - Once a file or approved external clip link actually exists, update this table to a working link and add it to the appropriate case study and [portfolio README](../../README.md). Do not add dead links or claim footage exists in advance.
 
-The current repository can remain a source-and-code portfolio **without** these videos, subject to separate ownership/licensing, content review and an explicit publication decision.
+Private code and case-study preparation can continue **without** these videos. **Do not make the repository public until the owner-approved video selection is added or linked and the final release review is completed.** The exact selection may be refined during recording; M5 is optional.
