@@ -2,7 +2,7 @@
 
 [Portfolio](../README.md) · [Verification matrix](verification-matrix.md)
 
-An optional portfolio package can contain up to four short clips of the **already completed and owner-tested** game, plus a separate optional synthetic C# example. Durations below are planning estimates, not existing footage. No screenshots, video, customer saves or new recordings have been produced for this plan. The [video staging directory](../media/videos/README.md) is reserved for future approved files.
+The owner has decided to **include gameplay videos before public release**. The currently proposed package contains up to four short clips of the **already completed and owner-tested** game, plus a separate optional synthetic C# example. The exact clip selection can be finalized after capture; a new full QA campaign is not required. Durations below are planning estimates, not existing footage. No screenshots, video, customer saves or new recordings have been produced for this plan. The [video staging directory](../media/videos/README.md) is reserved for future approved files.
 
 ## Suggested shot list — optional, not recorded
 
@@ -20,7 +20,7 @@ An optional portfolio package can contain up to four short clips of the **alread
 2. Record from the previously working released game or an approved development build. Use a disposable profile only when a settings/progression demo would modify save state. Note actual version and device/OS when available. Never manipulate customer saves or the authoritative production save directory.
 3. **Do not rerun V1–V3 simply to record footage.** The developer's v1.0.0 release QA was already completed. Capture the visible behavior directly; use a *targeted* check only if footage reveals a defect, a different build changes behavior, or a specific engineering claim requires new evidence. Unreproduced source risks remain source-inspection findings.
 4. Capture M1 and M2 in one gameplay session if convenient; M3 and M4 can be separate relaunch demonstrations. M5 is optional and must remain explicitly labeled as the independent C# model, not production gameplay. Disable private notifications and omit personal paths, account details, signing/configuration views and confidential logs. Use captions where audio rights are unclear.
-5. Retain original recordings privately; review any public clip for edits, accuracy, asset/audio terms and confidentiality. Add only approved final clips or approved external links to the reserved video folder and case studies. A source/model-only showcase can continue without video; publication is a separate explicit owner decision.
+5. Retain original recordings privately; review any public clip for edits, accuracy, asset/audio terms and confidentiality. Add only approved final clips or approved external links to the reserved video folder and case studies. Private source/model preparation can continue without video; **public release must wait for the owner's selected footage and explicit go-live decision**.
 
 ## Evidence handoff
 
