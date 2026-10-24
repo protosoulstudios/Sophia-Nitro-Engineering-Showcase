@@ -26,10 +26,10 @@ All **41 independent checks** passed in the integration review: 12 transition, 1
 
 These results verify the independent models. Production architecture descriptions are grounded in source inspection. Separately, the developer reports completing release QA on the actual Unity/Android game, including a full tablet playthrough, before APK/AAB delivery. That historical testing was **not rerun or independently instrumented in the showcase workflow**; the standalone checks are not substitute production tests. No portfolio footage has been recorded. The examples do not establish measured performance, crash-safe storage or production failure recovery.
 
-See the **[verification matrix](docs/verification-matrix.md)** for the difference between historical game QA, source inspection and independent model checks. The **[demonstration plan](docs/demonstration-plan.md)** and reserved **[gameplay video folder](media/videos/README.md)** describe optional future portfolio footage. No footage has been recorded for this portfolio.
+See the **[verification matrix](docs/verification-matrix.md)** for the difference between historical game QA, source inspection and independent model checks. The **[demonstration plan](docs/demonstration-plan.md)** and reserved **[gameplay video folder](media/videos/README.md)** describe planned footage. No footage has been recorded yet; the owner has chosen to **add gameplay videos before publication**.
 
 ## Further reading
 
-[Architecture](docs/architecture.md) · [Gameplay and persistence](docs/gameplay-and-persistence.md) · [Engineering decisions](docs/decisions.md) · [Mobile policy](docs/mobile-and-validation.md) · [Evidence and coverage](docs/coverage.md) · [Draft history](CHANGELOG.md)
+[Architecture](docs/architecture.md) · [Gameplay and persistence](docs/gameplay-and-persistence.md) · [Engineering decisions](docs/decisions.md) · [Mobile policy](docs/mobile-and-validation.md) · [Evidence and coverage](docs/coverage.md) · [Code review and reuse policy](docs/code-review-and-reuse.md) · [Draft history](CHANGELOG.md)
 
-This is a private portfolio candidate for owner review. Public release and code reuse terms remain pending approval. No public license is granted, and no production assets, private review records or real save data are included.
+This repository remains a **private portfolio candidate**. It is intended for professional code inspection, **not open-source redistribution**; see the [code review and reuse policy](docs/code-review-and-reuse.md). The owner requires gameplay videos and an explicit final release decision before any public visibility change. No public reuse license, production assets, private review records or real save data are included.
