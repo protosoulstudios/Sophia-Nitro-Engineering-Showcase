@@ -33,7 +33,7 @@ Both asynchronous coroutines run on the bootstrap host. The loading screen is sc
 
 ## C# demonstration and design decisions
 
-A production excerpt would offer direct implementation fidelity, but authorship, contractual permission and redistribution terms for the source have not been independently cleared. It also relies on Unity coroutines, scene configuration and application logging. Copying it would transfer those dependencies without producing a self-contained verification target.
+A production excerpt would offer direct implementation fidelity, and the client granted permission to make the original Unity repository public (developer-reported). The developer nevertheless chose a self-contained engineering showcase without production excerpts. Such code also depends on Unity coroutines, scene configuration and application logging; public-display permission is not a general code-reuse license or independent clearance of third-party assets.
 
 The new demonstration isolates coordination behind `ISceneBackend`. It reserves ownership before backend validation or loading, returns explicit request outcomes, and releases ownership in `finally`. Backend exceptions are observable through `LastFailure`. That diagnostic belongs to the last admitted backend request, not every caller: busy or malformed-name rejections preserve it; the next admitted request clears it. Callers should inspect the result and diagnostic before admitting another request. This is a proposed example design, not a claim that production already has those improvements.
 
@@ -82,6 +82,6 @@ Use synthetic scenes before interrupting real game transitions. Record source re
 
 ## Proposed demonstration footage
 
-When the owner is ready, capture a short Main Menu → Level Select → EASY → Sophia or Nitro → Loading → Level_Easy sequence, followed by one restart. A state trace or synthetic overlap test is **optional** and should be added only to support a specific deeper technical claim. Avoid credentials, editor paths and private logs. The client has already granted general public-display permission according to the developer; review any distinct third-party character, environment and audio conditions before publishing the actual clip. No clip has been produced.
+When the owner is ready, capture a short Main Menu → Level Select → EASY → Sophia or Nitro → Loading → Level_Easy sequence, followed by one restart. A state trace or synthetic overlap test is **optional** and should be added only to support a specific deeper technical claim. Avoid credentials, editor paths and private logs. Client permission to make the original Unity repository public has already been reported; the developer chose this showcase instead. Review any distinct third-party character, environment and audio conditions before publishing the clip. No clip has been produced.
 
 The independent code and relationship to production were reviewed for the published code-first portfolio. The owner approved public display; future gameplay footage is an optional enhancement requiring clip-specific rights review, not a reason to repeat general release QA. The [checkpoint](checkpoint-and-respawn.md) and [persistence](save-and-persistence.md) examples cover complementary gameplay and data responsibilities.

@@ -17,7 +17,7 @@ The [existing demonstration plan](../../docs/demonstration-plan.md) contains opt
 
 ## When clips are available
 
-- Stage only **approved final clips** here, after checking client/project depiction, third-party visual/audio terms, confidentiality and individual clip content. The developer has already reported general client permission to showcase the game publicly in this engineering portfolio; that approval does **not** make the private Unity project public or grant redistribution rights to purchased assets.
+- Stage only **approved final clips** here after checking their content, confidentiality and relevant third-party visual/audio terms. The client permitted publication of the original Unity production repository (developer-reported); the developer chose to keep that repository private and publish this separate showcase instead. General code-reuse rights and third-party asset redistribution terms remain separate.
 - Prefer compact, accessible clips or a stable approved video-host link when media files would bloat Git history. **Never commit large originals, recordings with private information, licensed raw assets, customer saves or release credentials.** Check repository hosting limits before upload.
 - Keep original capture files and private evidence/clearance details **outside** the public-facing showcase. For each final clip, retain the source/build version, device, edits, and what the video actually demonstrates in a private record. Label cuts and synthetic footage accurately.
 - Once a file or approved external clip link actually exists, update this table to a working link and add it to the appropriate case study and [portfolio README](../../README.md). Do not add dead links or claim footage exists in advance.
