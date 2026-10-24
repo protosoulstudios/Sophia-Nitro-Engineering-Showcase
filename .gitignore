@@ -1,0 +1,22 @@
+# Standalone .NET sample outputs. Keep generated files outside the portfolio.
+**/bin/
+**/obj/
+artifacts/
+TestResults/
+
+# Local editor, IDE and OS files.
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.rsuser
+*.userosscache
+*.sln.docstates
+*.log
+.DS_Store
+Thumbs.db
+
+# Private, unedited media working files stay outside the published showcase.
+media/raw/
+media/work/
