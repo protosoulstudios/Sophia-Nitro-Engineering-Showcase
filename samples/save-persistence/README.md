@@ -9,7 +9,7 @@ Independently authored private review candidate, not copied Unity production cod
 With .NET 8 SDK installed, the ordinary command from the repository root is:
 
 ```sh
-dotnet run --project samples/save-persistence/SavePersistence.csproj --configuration Release --artifacts-path /tmp/save-persistence-build
+dotnet run --project samples/save-persistence/SavePersistence.csproj --configuration Release
 ```
 
 Expected final output: `17 persistence contract checks passed.` Assertions exit nonzero on failure. The ordinary command was attempted here but failed during NuGet-Migrations mutex initialization. Successful verification used SDK 8.0.426's Roslyn compiler directly against .NET 8 references, with nullable analysis and warnings as errors, followed by .NET runtime execution. This is not a verified ordinary project build or Unity test.
@@ -18,4 +18,4 @@ All access, including other users of the storage, must be serialized. A failed s
 
 Loads return explicit provenance and per-slot statuses. Both unusable slots return defaults with diagnostics; unsupported versions block rather than silently downgrade. Save refuses unreadable/unsupported existing records, writes staging text, backs up only a validated primary, then writes primary. If a corrupt primary was recovered from backup, save preserves that valid backup. Unknown fields are ignored and not round-tripped; future incompatible schema changes require versioning and explicit migration work.
 
-The [case study](../../docs/showcases/save-and-persistence.md) explains production differences, bounded guarantees and the pending Unity/Android verification plan.
+The [case study](../../docs/showcases/save-and-persistence.md) explains production differences, bounded guarantees and optional targeted checks for stronger claims. It does not reopen the developer's previously completed Android release QA.
